@@ -2,11 +2,12 @@ class Obstacle {
   constructor(context, xPos, yPos) {
     this.xPos = xPos;
     this.yPos = yPos;
-    this.dx = 30;
+    this.dx = 10;
     this.dy = 2;
     this.radius = 30;
     this.context = context;
     this.draw = this.draw.bind(this);
+    this.checkCollision = this.checkCollision.bind(this);
   
   }
   draw() {
@@ -19,14 +20,11 @@ class Obstacle {
     }
     this.xPos += this.dx;
   }
-  collisionDetection() {
-    dx = player.xPos - this.xPos;
-    dy = player.yPos - this.yPos
-    var distance = Math.sqrt(dx * dx + dy * dy);
-    if (distance < this.radius + player.radius) {
-      console.log("Collision")
+  checkCollision(player) {
+    if (distance(player, this) < player.radius + this.radius) {
+      player.xPos = 20;
+      player.yPos = 20;
     }
-      
-                
-			}
+    else return false;
+  }
 }
