@@ -18,12 +18,13 @@ class Player {
 			this.draw();
 		}
 	}
-	draw() {
+	draw() { 
 		this.context.fillRect(this.xPos, this.yPos, this.width, this.height);
+		this.context.fillStyle = "#FF0000";
 	}
 	win() {
 		if (this.xPos > 700 && this.yPos > 300 )
-		console.log("win");
+		location.replace("./Game.html");
 	}
 	collisionDetection() {
 		if(this.xPos == StaticObstacle.xPos && this.yPos == StaticObstacle.yPos){
