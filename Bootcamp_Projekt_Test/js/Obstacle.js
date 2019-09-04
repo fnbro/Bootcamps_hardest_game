@@ -19,4 +19,14 @@ class Obstacle {
     }
     this.xPos += this.dx;
   }
+  collisionDetection() {
+    dx = player.xPos - this.xPos;
+    dy = player.yPos - this.yPos
+    var distance = Math.sqrt(dx * dx + dy * dy);
+    if (distance < this.radius + player.radius) {
+      console.log("Collision")
+    }
+      
+                
+			}
 }
