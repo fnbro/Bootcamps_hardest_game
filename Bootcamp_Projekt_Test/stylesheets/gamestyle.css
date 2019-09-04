@@ -1,0 +1,18 @@
+* {
+    padding: 0;
+    margin: 0;
+    background-color: burlywood;
+}
+
+canvas {
+    border:1px solid #d3d3d3;
+    background-color: #f1f1f1;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 360px;
+    display: block;
+    width: 800;
+    height: 500px;
+}
