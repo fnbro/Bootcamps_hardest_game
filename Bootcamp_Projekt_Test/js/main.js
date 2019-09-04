@@ -1,35 +1,22 @@
-
 let canvas = document.querySelector("canvas");
-let context = canvas.getContext("2d");
 
-let player = new Player();
-
-function draw() {
-    context.fillRect(player.yPos, player.xPos, player.width, player.height);
+class HardestGame {
+    constructor(context) {
+    this.player = new Player(context);
+    this.obstacle = new Obstacle(context,40,100);
+    this.obstacle1 = new Obstacle(context,40,200);
+    this.context = context;
+    this.draw = this.draw.bind(this);
+    window.requestAnimationFrame(this.draw);
+    }
+    draw() {
+        this.context.clearRect(0, 0, innerWidth, innerHeight)
+        this.player.draw();
+        this.obstacle.draw();
+        this.obstacle1.draw()
+        window.requestAnimationFrame(this.draw);
+    }
+    
 }
-draw();
+let hardestGame = new HardestGame(canvas.getContext("2d"));
 
-//context.rect(0, 0, 50, 50);
-//	context.stroke();
-	
-document.onkeydown = e => {
-	console.log(e.keyCode);
-	  
-    if(e.keyCode==39){
-        player.xPos+=5;
-       }
-       if(e.keyCode==37) {
-        player.xPos-=5;
-       }
-       if (e.keyCode == 38) {
-        player.yPos-=5;
-       }
-       if (e.keyCode == 40){
-        player.yPos+=5;
-       }
-       //canvas.width=canvas.width;
-       //context.Rect(player.xPos, player.yPos, player.width, player.height);
-      // context.stroke();
-      
-  }
-      
