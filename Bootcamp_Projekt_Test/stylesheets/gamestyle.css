@@ -6,13 +6,13 @@
 
 canvas {
     border:1px solid #d3d3d3;
-    background-color: #f1f1f1;
+    background-color: #68f3f3;
     padding-left: 0;
     padding-right: 0;
     margin-left: auto;
     margin-right: auto;
     margin-top: 360px;
-    display: block;
-    width: 800;
-    height: 500px;
+    display: block; 
+    background-image: url("fliesen.jpg"); 
+    background-size:cover;
 }
