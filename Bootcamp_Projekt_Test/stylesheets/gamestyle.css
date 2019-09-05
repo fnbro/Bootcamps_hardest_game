@@ -16,3 +16,8 @@ canvas {
     background-image: url("fliesen.jpg"); 
     background-size:cover;
 }
+#Death {
+    position: relative;
+    left: 560px;
+
+}

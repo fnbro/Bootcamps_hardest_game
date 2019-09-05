@@ -1,18 +1,22 @@
 let canvas = document.querySelector("canvas");
+let level = 1
 
 class HardestGame {
   constructor(context) {
     this.player = new Player(context);
-    this.obstacle = new Obstacle(context, 40, 100);
-    this.obstacle1 = new Obstacle(context, 700, 140);
-    this.obstacle2 = new Obstacle(context, 40, 180);
-    this.obstacle3 = new Obstacle(context, 700, 220);
-    this.obstacle4 = new Obstacle(context, 40, 260);
-    this.obstacle5 = new Obstacle(context, 700, 300);
+    this.deathCounter = new DeathCounter(context, 0);
+    this.obstacle = new Obstacle(context, 40, 100, this.deathCounter);
+    this.obstacle1 = new Obstacle(context, 700, 140, this.deathCounter);
+    this.obstacle2 = new Obstacle(context, 40, 180, this.deathCounter);
+    this.obstacle3 = new Obstacle(context, 700, 220, this.deathCounter);
+    this.obstacle4 = new Obstacle(context, 40, 260, this.deathCounter);
+    this.obstacle5 = new Obstacle(context, 700, 300, this.deathCounter);
+    this.win = new Win(context);
     this.context = context;
     this.draw = this.draw.bind(this);
     window.requestAnimationFrame(this.draw);
   }
+
   draw() {
     this.context.clearRect(0, 0, innerWidth, innerHeight)
     this.player.draw();
@@ -22,6 +26,8 @@ class HardestGame {
     this.obstacle3.draw();
     this.obstacle4.draw();
     this.obstacle5.draw();
+    this.deathCounter.draw();
+    this.win.draw();
     window.requestAnimationFrame(this.draw);
     this.player.win();
     this.obstacle.checkCollision(this.player);

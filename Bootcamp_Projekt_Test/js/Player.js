@@ -18,7 +18,7 @@ class Player {
 		}
 	}
 	draw() {
-		this.context.fillStyle = "yellow";
+		this.context.fillStyle = "red";
 
 		this.context.beginPath();
 		this.context.arc(this.xPos, this.yPos, this.radius, 0, 2 * Math.PI);
@@ -27,13 +27,10 @@ class Player {
 	}
 	win() {
 		if (this.xPos > 700 && this.yPos > 300 )
-		location.replace("./Game.html");
+		location.replace("./winingscreen.html");
 	}
 }
 
-
-
-//if(this.xPos == StaticObstacle.staticObstacle.xPos || this.yPos == StaticObstacle.staticObstacle.yPos){
 
 
 
