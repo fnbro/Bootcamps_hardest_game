@@ -4,7 +4,11 @@ class HardestGame {
   constructor(context) {
     this.player = new Player(context);
     this.obstacle = new Obstacle(context, 40, 100);
-    this.obstacle1 = new Obstacle(context, 40, 200);
+    this.obstacle1 = new Obstacle(context, 700, 140);
+    this.obstacle2 = new Obstacle(context, 40, 180);
+    this.obstacle3 = new Obstacle(context, 700, 220);
+    this.obstacle4 = new Obstacle(context, 40, 260);
+    this.obstacle5 = new Obstacle(context, 700, 300);
     this.context = context;
     this.draw = this.draw.bind(this);
     window.requestAnimationFrame(this.draw);
@@ -14,10 +18,18 @@ class HardestGame {
     this.player.draw();
     this.obstacle.draw();
     this.obstacle1.draw();
+    this.obstacle2.draw();
+    this.obstacle3.draw();
+    this.obstacle4.draw();
+    this.obstacle5.draw();
     window.requestAnimationFrame(this.draw);
     this.player.win();
     this.obstacle.checkCollision(this.player);
     this.obstacle1.checkCollision(this.player);
+    this.obstacle2.checkCollision(this.player);
+    this.obstacle3.checkCollision(this.player);
+    this.obstacle4.checkCollision(this.player);
+    this.obstacle5.checkCollision(this.player);
   }
 }
 function distance(a, b) {

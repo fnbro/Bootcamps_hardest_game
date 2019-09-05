@@ -18,15 +18,17 @@ class Player {
 		}
 	}
 	draw() {
+		this.context.fillStyle = "yellow";
+
 		this.context.beginPath();
 		this.context.arc(this.xPos, this.yPos, this.radius, 0, 2 * Math.PI);
+		this.context.fill();
 		this.context.stroke();
 	}
 	win() {
 		if (this.xPos > 700 && this.yPos > 300 )
 		location.replace("./Game.html");
 	}
-
 }
 
 
