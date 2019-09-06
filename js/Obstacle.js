@@ -11,6 +11,7 @@ class Obstacle {
     this.deathCounter = deathCounter;
   }
   draw() {
+    this.context.save() 
     this.context.fillStyle = "black";
 
     this.context.beginPath();
@@ -22,6 +23,8 @@ class Obstacle {
       this.dx = -this.dx;
     }
     this.xPos += this.dx;
+    this.context.restore()
+
   }
   checkCollision(player) {
     if (distance(player, this) < player.radius + this.radius) {

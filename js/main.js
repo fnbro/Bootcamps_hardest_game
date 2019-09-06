@@ -1,9 +1,8 @@
 let canvas = document.querySelector("canvas");
-let level = 1
 
 class HardestGame {
   constructor(context) {
-    this.player = new Player(context);
+    this.player = new Player(context, 1);
     this.deathCounter = new DeathCounter(context, 0);
     this.obstacle = new Obstacle(context, 40, 100, this.deathCounter);
     this.obstacle1 = new Obstacle(context, 700, 140, this.deathCounter);
@@ -11,14 +10,14 @@ class HardestGame {
     this.obstacle3 = new Obstacle(context, 700, 220, this.deathCounter);
     this.obstacle4 = new Obstacle(context, 40, 260, this.deathCounter);
     this.obstacle5 = new Obstacle(context, 700, 300, this.deathCounter);
-   // this.spinningwheel = new SpinningWheel(context)
+    this.cross = new Cross(context, 100, 100, 60, 0.1)
     this.win = new Win(context);
     this.context = context;
     this.draw = this.draw.bind(this);
     window.requestAnimationFrame(this.draw);
   }
-
   draw() {
+    if (this.player.level === 1) {
     this.context.clearRect(0, 0, innerWidth, innerHeight)
     this.player.draw();
     this.obstacle.draw();
@@ -27,7 +26,6 @@ class HardestGame {
     this.obstacle3.draw();
     this.obstacle4.draw();
     this.obstacle5.draw();
-   // this.spinningwheel.draw();
     this.deathCounter.draw();
     this.win.draw();
     window.requestAnimationFrame(this.draw);
@@ -38,8 +36,27 @@ class HardestGame {
     this.obstacle3.checkCollision(this.player);
     this.obstacle4.checkCollision(this.player);
     this.obstacle5.checkCollision(this.player);
+    }
+    if (this.player.level === 2) {
+    this.context.clearRect(0, 0, innerWidth, innerHeight)
+    this.player.draw();
+    this.obstacle.draw();
+    this.obstacle1.draw();
+    this.obstacle2.draw();
+    this.deathCounter.draw();
+
+    this.win.draw();
+    window.requestAnimationFrame(this.draw);
+    this.player.win();
+    this.obstacle.checkCollision(this.player);
+    this.obstacle1.checkCollision(this.player);
+    this.obstacle2.checkCollision(this.player);
+    this.cross.draw();
+    this.cross.update();
+    }
   }
 }
+
 function distance(a, b) {
   return Math.sqrt((a.xPos - b.xPos) ** 2 + (a.yPos - b.yPos) ** 2);
 }
