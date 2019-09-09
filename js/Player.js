@@ -1,6 +1,6 @@
 class Player {
 	constructor(context, level) {
-		this.yPos = 20;
+		this.yPos = 40;
 		this.xPos = 20;
 		this.radius = 15;
 		this.level = level;
@@ -26,15 +26,20 @@ class Player {
 		this.context.fill();
 		this.context.stroke();
 		this.context.restore()
+
+		this.context.font = "20px Arial";
+        this.context.fillText(`Level: ${this.level}`, 0, 20);
+
 	}
 	win() {
 		if (this.xPos > 700 && this.yPos > 300 && this.level === 2) {
 			location.replace("./winningscreen.html");
 		}
 		if (this.xPos > 700 && this.yPos > 300 && this.level === 1) {
-			this.level = 2;
+			this.level += 1;
 			this.xPos = 20;
-			this.yPos = 20;
+			this.yPos = 40;
+
 		}
 	}
 }

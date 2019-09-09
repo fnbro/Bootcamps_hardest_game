@@ -45,7 +45,7 @@ class Cross {
             let y = this.y + delta * Math.sin(angle);
             if (distance({ xPos: x, yPos: y }, player) < player.radius) {
               player.xPos = 20;
-              player.yPos = 20;
+              player.yPos = 40;
               this.deathCounter.death += 1;
 
             }

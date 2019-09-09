@@ -29,7 +29,7 @@ class Obstacle {
   checkCollision(player) {
     if (distance(player, this) < player.radius + this.radius) {
       player.xPos = 20;
-      player.yPos = 20;
+      player.yPos = 40;
       this.deathCounter.death += 1;
     }
     else return false;

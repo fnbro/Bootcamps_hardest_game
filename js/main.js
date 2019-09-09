@@ -27,7 +27,7 @@ class HardestGame {
     this.obstacle3.draw();
     this.obstacle4.draw();
     this.obstacle5.draw();
-    this.deathCounter.draw();
+    this.deathCounter.draw();;
     this.win.draw();
     window.requestAnimationFrame(this.draw);
     this.player.win();
