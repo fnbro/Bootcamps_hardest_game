@@ -2,7 +2,7 @@ class Obstacle {
   constructor(context, xPos, yPos, deathCounter) {
     this.xPos = xPos;
     this.yPos = yPos;
-    this.dx = 30;
+    this.dx = 35;
     this.radius = 15;
     this.context = context;
     this.draw = this.draw.bind(this);
