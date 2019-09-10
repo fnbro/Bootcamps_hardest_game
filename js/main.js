@@ -4,12 +4,12 @@ class HardestGame {
   constructor(context) {
     this.player = new Player(context, 1);
     this.deathCounter = new DeathCounter(context, 0);
-    this.obstacle = new Obstacle(context, 40, 100, this.deathCounter);
-    this.obstacle1 = new Obstacle(context, 700, 140, this.deathCounter);
-    this.obstacle2 = new Obstacle(context, 40, 180, this.deathCounter);
-    this.obstacle3 = new Obstacle(context, 700, 220, this.deathCounter);
-    this.obstacle4 = new Obstacle(context, 40, 260, this.deathCounter);
-    this.obstacle5 = new Obstacle(context, 700, 300, this.deathCounter);
+    this.obstacle = new Obstacle(context, 20, 100, this.deathCounter);
+    this.obstacle1 = new Obstacle(context, 780, 140, this.deathCounter);
+    this.obstacle2 = new Obstacle(context, 20, 180, this.deathCounter);
+    this.obstacle3 = new Obstacle(context, 780, 220, this.deathCounter);
+    this.obstacle4 = new Obstacle(context, 20, 260, this.deathCounter);
+    this.obstacle5 = new Obstacle(context, 780, 300, this.deathCounter);
     this.bouncingBall = new BouncingBall(context, 100, 100, this.deathCounter);
     this.bouncingBall1 = new BouncingBall(context, 500, 150, this.deathCounter);
     this.bouncingBall2 = new BouncingBall(context, 200, 200, this.deathCounter);

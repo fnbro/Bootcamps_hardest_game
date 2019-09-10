@@ -3,7 +3,6 @@ class Obstacle {
     this.xPos = xPos;
     this.yPos = yPos;
     this.dx = 30;
-    this.dy = 2;
     this.radius = 15;
     this.context = context;
     this.draw = this.draw.bind(this);
@@ -19,7 +18,7 @@ class Obstacle {
     this.context.fill();
     this.context.stroke();
 
-    if (this.xPos < 30 || this.xPos > 780) {
+    if (this.xPos < 20 || this.xPos > 780) {
       this.dx = -this.dx;
     }
     this.xPos += this.dx;
