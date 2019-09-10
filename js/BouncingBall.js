@@ -5,7 +5,7 @@ class BouncingBall {
       this.speed = 30;
       this.ball = { xPos: xPos, yPos: yPos };
       this.radius = 15;
-      this.moveX = Math.cos(Math.PI / 180 * 50) * 10;
+      this.moveX = Math.cos(Math.PI / 180 * 500) * 10;
       this.moveY = Math.sin(Math.PI / 180 * 50) * 10;
       this.context = context;
       this.draw = this.draw.bind(this);
@@ -15,8 +15,8 @@ draw() {
 if (this.xPos > canvas.width - this.radius || this.xPos < this.radius) this.moveX = -this.moveX;
 if (this.yPos > canvas.height - this.radius || this.yPos < this.radius) this.moveY = -this.moveY;
 
-    this.xPos += this.moveX;
-    this.yPos += this.moveY;    
+    this.xPos += 2 * this.moveX;
+    this.yPos += 2 * this.moveY;    
 
     this.context.save() 
     this.context.fillStyle = "black";

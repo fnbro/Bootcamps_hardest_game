@@ -24,8 +24,9 @@ class Player {
 
 	}
 	update() {
-		this.xPos += 1 * this.vx;
-		this.yPos += 1 * this.vy;
+		this.xPos +=  this.vx;
+		this.yPos +=  this.vy;
+		console.log(this.vx, this.vy)
 		if (this.xPos <= 20) { this.xPos = 20 };
 		if (this.yPos <= 20) { this.yPos = 20 };
 		if (this.xPos + this.radius > canvas.width) { this.xPos = canvas.width - this.radius };
@@ -62,6 +63,7 @@ class Player {
 			this.yPos = 40;
 			this.vx = 0;
 			this.vy = 0;
+			console.log(this.vx, this.vy);
 
 		}
 	}
