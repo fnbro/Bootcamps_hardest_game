@@ -10,7 +10,9 @@ class HardestGame {
     this.obstacle3 = new Obstacle(context, 700, 220, this.deathCounter);
     this.obstacle4 = new Obstacle(context, 40, 260, this.deathCounter);
     this.obstacle5 = new Obstacle(context, 700, 300, this.deathCounter);
-    this.bouncingBall = new BouncingBall (context, 40, 40, this.deathCounter);
+    this.bouncingBall = new BouncingBall (context, 123, 100, this.deathCounter);
+    this.bouncingBall1 = new BouncingBall (context, 290, 200, this.deathCounter);
+    this.bouncingBall2 = new BouncingBall (context, 360, 300, this.deathCounter);
     this.cross = new Cross(context, 200, 200, 200, 0.03, this.deathCounter)
     this.cross1 = new Cross(context, 600, 200, 200, 0.03, this.deathCounter)
     this.win = new Win(context);
@@ -21,7 +23,7 @@ class HardestGame {
   draw() {
     if (this.player.level === 1) {
     this.context.clearRect(0, 0, innerWidth, innerHeight)
-    this.player.draw();
+    this.player.draw(); 
     this.obstacle.draw();
     this.obstacle1.draw();
     this.obstacle2.draw();
@@ -57,8 +59,13 @@ class HardestGame {
       this.context.clearRect(0, 0, innerWidth, innerHeight)
       this.player.draw();
       setInterval(this.bouncingBall.draw(), 10);
+      setInterval(this.bouncingBall1.draw(), 10);
+      setInterval(this.bouncingBall2.draw(), 10);
       this.deathCounter.draw();;
       this.win.draw();
+      this.bouncingBall.checkCollision(this.player);
+      this.bouncingBall1.checkCollision(this.player);
+      this.bouncingBall2.checkCollision(this.player);
       window.requestAnimationFrame(this.draw);
       this.player.win();
       }

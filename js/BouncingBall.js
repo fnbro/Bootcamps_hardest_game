@@ -5,18 +5,18 @@ class BouncingBall {
       this.speed = 30;
       this.ball = { xPos: xPos, yPos: yPos };
       this.radius = 15;
-      this.moveX = Math.cos(Math.PI / 180 * 50) * 3;
-      this.moveY = Math.sin(Math.PI / 180 * 50) * 3;
+      this.moveX = Math.cos(Math.PI / 180 * 50) * 10;
+      this.moveY = Math.sin(Math.PI / 180 * 50) * 10;
       this.context = context;
       this.draw = this.draw.bind(this);
       this.deathCounter = deathCounter;
     }
 draw() {
-if (this.ball.xPos > canvas.width - this.radius || this.ball.xPos < this.radius) this.moveX = -this.moveX;
-if (this.ball.yPos > canvas.height - this.radius || this.ball.yPos < this.radius) this.moveY = -this.moveY;
+if (this.xPos > canvas.width - this.radius || this.xPos < this.radius) this.moveX = -this.moveX;
+if (this.yPos > canvas.height - this.radius || this.yPos < this.radius) this.moveY = -this.moveY;
 
-    this.ball.xPos += this.moveX;
-    this.ball.yPos += this.moveY;    
+    this.xPos += this.moveX;
+    this.yPos += this.moveY;    
 
     this.context.save() 
     this.context.fillStyle = "black";
@@ -26,5 +26,13 @@ if (this.ball.yPos > canvas.height - this.radius || this.ball.yPos < this.radius
     this.context.fill();
     this.context.stroke();
 }
+checkCollision(player) {
+    if (distance(player, this) < player.radius + this.radius) {
+      player.xPos = 20;
+      player.yPos = 40;
+      this.deathCounter.death += 1;
+    }
+    else return false;
+  }
 }
 
