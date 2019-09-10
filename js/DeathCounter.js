@@ -6,7 +6,7 @@ class DeathCounter {
     draw() {
 
         this.context.font = "20px Arial";
-        this.context.fillText(`Deaths: ${this.death}`, 700, 20);
+        this.context.fillText(`Deaths: ${this.death}`, 690, 20);
         this.context.fill();
     }
 }
