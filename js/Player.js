@@ -3,6 +3,7 @@ class Player {
 		this.yPos = 40;
 		this.xPos = 20;
 		this.radius = 15;
+		this.speed = 3;
 		this.level = level;
 		this.context = context;
 		this.draw();
@@ -32,8 +33,13 @@ class Player {
 
 	}
 	win() {
-		if (this.xPos > 700 && this.yPos > 300 && this.level === 2) {
+		if (this.xPos > 700 && this.yPos > 300 && this.level === 3) {
 			location.replace("./winningscreen.html");
+		}
+		if (this.xPos > 700 && this.yPos > 300 && this.level === 2) {
+			this.level += 1;
+			this.xPos = 20;
+			this.yPos = 40;
 		}
 		if (this.xPos > 700 && this.yPos > 300 && this.level === 1) {
 			this.level += 1;

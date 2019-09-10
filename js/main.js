@@ -10,6 +10,7 @@ class HardestGame {
     this.obstacle3 = new Obstacle(context, 700, 220, this.deathCounter);
     this.obstacle4 = new Obstacle(context, 40, 260, this.deathCounter);
     this.obstacle5 = new Obstacle(context, 700, 300, this.deathCounter);
+    this.bouncingBall = new BouncingBall (context, 40, 40, this.deathCounter);
     this.cross = new Cross(context, 200, 200, 200, 0.03, this.deathCounter)
     this.cross1 = new Cross(context, 600, 200, 200, 0.03, this.deathCounter)
     this.win = new Win(context);
@@ -52,6 +53,15 @@ class HardestGame {
     this.cross1.checkCollision(this.player);
     this.player.draw();
     }
+    if (this.player.level === 3) {
+      this.context.clearRect(0, 0, innerWidth, innerHeight)
+      this.player.draw();
+      setInterval(this.bouncingBall.draw(), 10);
+      this.deathCounter.draw();;
+      this.win.draw();
+      window.requestAnimationFrame(this.draw);
+      this.player.win();
+      }
   }
 }
 function distance(a, b) {
