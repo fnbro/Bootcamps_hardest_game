@@ -18,13 +18,12 @@ class HardestGame {
     this.win = new Win(context);
     this.context = context;
     this.draw = this.draw.bind(this);
-    window.requestAnimationFrame(this.draw);
+    window.requestAnimationFrame(this.draw());
   }
   draw() {
     if (this.player.level === 1) {
       this.context.clearRect(0, 0, innerWidth, innerHeight)
       this.player.draw();
-      this.player.update();
       this.player.move();
       this.obstacle.draw();
       this.obstacle1.draw();
@@ -35,35 +34,33 @@ class HardestGame {
       this.deathCounter.draw();;
       this.win.draw();
       window.requestAnimationFrame(this.draw);
-      this.player.win();
       this.obstacle.checkCollision(this.player);
       this.obstacle1.checkCollision(this.player);
       this.obstacle2.checkCollision(this.player);
       this.obstacle3.checkCollision(this.player);
       this.obstacle4.checkCollision(this.player);
       this.obstacle5.checkCollision(this.player);
+      this.player.win();
     }
     if (this.player.level === 2) {
       this.context.clearRect(0, 0, innerWidth, innerHeight)
+      this.player.win();
+      this.win.draw();
       this.deathCounter.draw();
       this.player.draw();
-      this.player.update();
       this.player.move();
-      this.win.draw();
       window.requestAnimationFrame(this.draw);
-      this.player.win();
       this.cross.draw();
       this.cross.update();
       this.cross1.draw();
       this.cross1.update();
       this.cross.checkCollision(this.player);
       this.cross1.checkCollision(this.player);
-      this.player.draw();
+      this.player.win();
     }
     if (this.player.level === 3) {
       this.context.clearRect(0, 0, innerWidth, innerHeight)
       this.player.draw();
-      this.player.update();
       this.player.move();
       setInterval(this.bouncingBall.draw(), 10);
       setInterval(this.bouncingBall1.draw(), 10);
@@ -76,6 +73,7 @@ class HardestGame {
       window.requestAnimationFrame(this.draw);
       this.player.win();
     }
+    this.player.update();
   }
 }
 function distance(a, b) {

@@ -53,11 +53,15 @@ class Player {
 			this.level += 1;
 			this.xPos = 20;
 			this.yPos = 40;
+			this.vx = 0;
+			this.vy = 0;
 		}
 		if (this.xPos > 700 && this.yPos > 300 && this.level === 1) {
 			this.level += 1;
 			this.xPos = 20;
 			this.yPos = 40;
+			this.vx = 0;
+			this.vy = 0;
 
 		}
 	}
