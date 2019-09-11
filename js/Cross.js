@@ -34,8 +34,11 @@ class Cross {
   
       this.context.restore();
     }
-    update() {
+    updateRight() {
         this.angle += this.speedAngle;
+      }
+      updateLeft() {
+        this.angle -= this.speedAngle;
       }
     checkCollision(player) {
         for (let iAngle = 0; iAngle < 4; iAngle++) {

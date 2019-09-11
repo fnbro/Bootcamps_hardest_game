@@ -34,7 +34,7 @@ class HardestGame {
       this.player.draw();
       this.player.move();
       this.cross2.draw();
-      this.cross2.update();
+      this.cross2.updateRight();
       this.verticalBall.draw();
       this.verticalBall1.draw();
       setInterval(this.bouncingBall7.draw(), 10);
@@ -78,9 +78,9 @@ class HardestGame {
       this.player.draw();
       this.player.move();
       this.cross.draw();
-      this.cross.update();
+      this.cross.updateLeft();
       this.cross1.draw();
-      this.cross1.update();
+      this.cross1.updateRight();
       this.cross.checkCollision(this.player);
       this.cross1.checkCollision(this.player);
       window.requestAnimationFrame(this.draw);
