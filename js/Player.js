@@ -24,8 +24,8 @@ class Player {
 
 	}
 	update() {
-		this.xPos +=  this.vx;
-		this.yPos +=  this.vy;
+		this.xPos += this.vx;
+		this.yPos += this.vy;
 		if (this.xPos <= 20) { this.xPos = 20 };
 		if (this.yPos <= 20) { this.yPos = 20 };
 		if (this.xPos + this.radius > canvas.width) { this.xPos = canvas.width - this.radius };
@@ -46,8 +46,15 @@ class Player {
 		}
 	}
 	win() {
-		if (this.xPos > 700 && this.yPos > 300 && this.level === 4) {
+		if (this.xPos > 700 && this.yPos > 300 && this.level === 5) {
 			location.replace("./winningscreen.html");
+		}
+		if (this.xPos > 700 && this.yPos > 300 && this.level === 4) {
+			this.level += 1;
+			this.xPos = 20;
+			this.yPos = 40;
+			this.vx = 0;
+			this.vy = 0;
 		}
 		if (this.xPos > 700 && this.yPos > 300 && this.level === 3) {
 			this.level += 1;
@@ -87,3 +94,4 @@ document.onkeydown = e => {
 	if (this.yPos + this.radius > canvas.height) { this.yPos = canvas.height - this.radius };
 }
 */
+
