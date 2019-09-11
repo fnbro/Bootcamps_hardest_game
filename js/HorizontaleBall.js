@@ -1,4 +1,4 @@
-class Obstacle {
+class HorizontaleBall {
   constructor(context, xPos, yPos, deathCounter) {
     this.xPos = xPos;
     this.yPos = yPos;

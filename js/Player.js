@@ -26,7 +26,6 @@ class Player {
 	update() {
 		this.xPos +=  this.vx;
 		this.yPos +=  this.vy;
-		console.log(this.vx, this.vy)
 		if (this.xPos <= 20) { this.xPos = 20 };
 		if (this.yPos <= 20) { this.yPos = 20 };
 		if (this.xPos + this.radius > canvas.width) { this.xPos = canvas.width - this.radius };
@@ -47,8 +46,15 @@ class Player {
 		}
 	}
 	win() {
-		if (this.xPos > 700 && this.yPos > 300 && this.level === 3) {
+		if (this.xPos > 700 && this.yPos > 300 && this.level === 4) {
 			location.replace("./winningscreen.html");
+		}
+		if (this.xPos > 700 && this.yPos > 300 && this.level === 3) {
+			this.level += 1;
+			this.xPos = 20;
+			this.yPos = 40;
+			this.vx = 0;
+			this.vy = 0;
 		}
 		if (this.xPos > 700 && this.yPos > 300 && this.level === 2) {
 			this.level += 1;
@@ -63,11 +69,11 @@ class Player {
 			this.yPos = 40;
 			this.vx = 0;
 			this.vy = 0;
-			console.log(this.vx, this.vy);
 
 		}
 	}
 }
+
 // the old movement of the ball
 /*
 document.onkeydown = e => {

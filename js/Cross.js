@@ -47,7 +47,6 @@ class Cross {
               player.xPos = 20;
               player.yPos = 40;
               this.deathCounter.death += 1;
-
             }
           }
         }

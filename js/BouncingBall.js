@@ -1,10 +1,9 @@
 class BouncingBall {
-    constructor(context, xPos, yPos, deathCounter) {
+    constructor(context, xPos, yPos, radius, deathCounter) {
       this.xPos = xPos;
       this.yPos = yPos;
-      this.speed = 30;
       this.ball = { xPos: xPos, yPos: yPos };
-      this.radius = 15;
+      this.radius = radius;
       this.moveX = Math.cos(Math.PI / 180 * 500) * 10;
       this.moveY = Math.sin(Math.PI / 180 * 50) * 10;
       this.context = context;
